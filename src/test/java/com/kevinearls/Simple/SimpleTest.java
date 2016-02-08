@@ -14,6 +14,6 @@ public class SimpleTest {
     @Test
     public void simpleTest() throws Exception {
         int selection = random.nextInt(5) + 1;
-        assertEquals(3, selection);
+        assertEquals(2, selection);
     }
 }
