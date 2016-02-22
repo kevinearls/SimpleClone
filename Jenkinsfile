@@ -3,7 +3,7 @@ node {
    stage 'Checkout'
 
    // Get some code from a GitHub repository
-   git url: 'git@github.com:kevinearls/Simple.git'
+//   git url: 'git@github.com:kevinearls/Simple.git'
 
    // Get the maven tool.
    // ** NOTE: This 'M3' maven tool must be configured
