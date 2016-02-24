@@ -13,7 +13,6 @@ import static org.junit.Assert.*;
 public class SimpleTest {
     Random random = new Random();
 
-    @Ignore
     @Test
     public void simpleTest() throws Exception {
         int selection = random.nextInt(5) + 1;
