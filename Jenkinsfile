@@ -1,21 +1,10 @@
 node {
    // Mark the code checkout 'stage'....
    stage 'Checkout'
-   // Get some code from a GitHub repository
-  //   git url: 'git@github.com:kevinearls/Simple.git'
-
-   // Get the maven tool.
-   // ** NOTE: This 'M3' maven tool must be configured
-   // **       in the global configuration.           
-//   def mvnHome = tool 'M3'
+   checkout scm
 
    // Mark the code build 'stage'....
    stage 'Build'
-   // Run the maven build
-  // sh "${mvnHome}/bin/mvn -Dsurefire.rerunFailingTestsCount=2 clean install"
-
-  // Check out the rest of the source from wherever the Jenkinsfile was checked out
-    checkout scm
 
    // Select tool versions
    def M2_HOME = tool 'maven-3.3.9'
