@@ -1,4 +1,4 @@
-node {
+node ('master') {               // TODO change to checkin-short
    // Mark the code checkout 'stage'....
    stage 'Checkout'
    checkout scm
