@@ -1,6 +1,6 @@
 node ('master') {               // TODO change to checkin-short
    // Mark the code checkout 'stage'....
-   stage 'Checkout'
+   stage 'Checkout 1.4.0.redhat-6-3-x-patch build'
    checkout scm
 
    // Mark the code build 'stage'....
@@ -24,9 +24,4 @@ node ('master') {               // TODO change to checkin-short
 
    stage 'Cleanup'
    deleteDir()
-
-
-
-
-
 }
