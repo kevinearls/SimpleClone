@@ -24,9 +24,4 @@ node ('master') {               // TODO change to checkin-short
 
    stage 'Cleanup'
    deleteDir()
-
-
-
-
-
 }
