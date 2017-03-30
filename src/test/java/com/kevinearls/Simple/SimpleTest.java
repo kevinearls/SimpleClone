@@ -24,4 +24,9 @@ public class SimpleTest {
     public void justPassThisTest() throws Exception {
         Thread.sleep(5000);
     }
+
+    @Test
+    public void emptyTest() {
+
+    }
 }
