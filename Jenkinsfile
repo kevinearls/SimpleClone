@@ -1,10 +1,10 @@
-node ('master') {               // TODO change to checkin-short
+node ('master') {
    // Mark the code checkout 'stage'....
    stage 'Checkout'
    checkout scm
 
    // Mark the code build 'stage'....
-   stage 'Build'
+   stage 'Setup environment'
 
    // Select tool versions
    def M2_HOME = tool 'maven-3.3.9'
@@ -24,9 +24,4 @@ node ('master') {               // TODO change to checkin-short
 
    stage 'Cleanup'
    deleteDir()
-
-
-
-
-
 }
