@@ -25,3 +25,5 @@ node ('master') {
    stage 'Cleanup'
    deleteDir()
 }
+
+
