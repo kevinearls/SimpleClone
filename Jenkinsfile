@@ -3,7 +3,9 @@ pipeline {
 
     stages {
         stage ('checkout') {
-            checkout scm
+            steps {
+                checkout scm
+            }
         }
         stage ('build') {
             steps {
@@ -13,10 +15,14 @@ pipeline {
             }
         }
         stage ('archive results') {
-            step([$class: 'JUnitResultArchiver', testResults: '**/target/*-reports/*.xml'])
+            steps {
+                step([$class: 'JUnitResultArchiver', testResults: '**/target/*-reports/*.xml'])
+            }
         }
         stage ('Cleanup') {
-            deleteDir()
+            steps {
+                deleteDir()
+            }
         }
     }
 }
