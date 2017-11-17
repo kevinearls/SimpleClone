@@ -7,7 +7,7 @@ node ('master') {
    stage 'Setup environment'
 
    // Select tool versions
-   def M2_HOME = tool 'maven-3.3.9'
+   def M2_HOME = tool 'maven-3.5.2'
    def JAVA_HOME = tool 'jdk8'
    
    // Override EVs which may be set on the node and update the path
