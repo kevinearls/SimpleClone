@@ -12,9 +12,8 @@ pipeline {
                         jdk 'jdk8'
                     }
                     steps {
-                        /*checkout scm */
+                        checkout scm
                         sh 'pwd'
-                        git 'https://github.com/kevinearls/Simple.git'
                         sh 'mvn --show-version --batch-mode --fail-at-end -Dsurefire.rerunFailingTestsCount=2 clean install'
                     }
                     post {
@@ -29,9 +28,8 @@ pipeline {
                         jdk 'jdk10'
                     }
                     steps {
-                        /*checkout scm */
+                        checkout scm
                         sh 'pwd'
-                        git 'https://github.com/kevinearls/Simple.git'
                         sh 'mvn --show-version --batch-mode --fail-at-end -Dsurefire.rerunFailingTestsCount=2 clean install'
                     }
                     post {
