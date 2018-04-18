@@ -11,6 +11,6 @@ public class InetTest {
     @Test
     public void getHostnameTest() throws Exception {
         String hostName = InetAddress.getLocalHost().getHostName();
-        System.out.println("HOSTNAME [" + hostName + "");
+        System.out.println("HOSTNAME [" + hostName + "]");
     }
 }
