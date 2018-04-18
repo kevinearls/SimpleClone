@@ -1,0 +1,46 @@
+pipeline {
+    agent none
+    tools {
+        maven 'maven-3.5.3'
+    }
+    stages {
+        stage('Outer') {
+            parallel {
+                stage ('jdk8-build') {
+                    agent any
+                    tools {
+                        jdk 'jdk8'
+                    }
+                    steps {
+                        /*checkout scm */
+                        sh 'pwd'
+                        git 'https://github.com/kevinearls/Simple.git'
+                        sh 'mvn --show-version --batch-mode --fail-at-end -Dsurefire.rerunFailingTestsCount=2 clean install'
+                    }
+                    post {
+                        always {
+                            step([$class: 'JUnitResultArchiver', testResults: '**/target/*-reports/*.xml'])
+                        }
+                    }
+                }
+                stage ('jdk-10-build') {
+                    agent any
+                    tools {
+                        jdk 'jdk10'
+                    }
+                    steps {
+                        /*checkout scm */
+                        sh 'pwd'
+                        git 'https://github.com/kevinearls/Simple.git'
+                        sh 'mvn --show-version --batch-mode --fail-at-end -Dsurefire.rerunFailingTestsCount=2 clean install'
+                    }
+                    post {
+                        always {
+                            step([$class: 'JUnitResultArchiver', testResults: '**/target/*-reports/*.xml'])
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
